@@ -1,0 +1,83 @@
+<app-header></app-header>
+
+<div class="container-fluid">
+    <!-- Navigation -->
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+
+        </div>
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <!-- -webkit-sticky Safari  -->
+        <button class="btnclass btn btn-success" (click)="onAddUser()">Add User</button>
+        <button class="btnclass btn btn-warning" (click)="onUpdate()">Update User</button>
+        <button class="btnclass btn btn-danger" (click)="onDelete()">Delete User</button>
+        <button class="btnclass btn btn-success" (click)="onSortJoining()">Sort By Joining</button>
+        <button class="btnclass btn btn-success" (click)="onSortDOB()">Sort By Date Of Birth</button>
+        <div class="form-group" style="float: right;">
+            <div class="input-group-prepend">
+                <span class="input-group-text" style="font-size: 1em; "><i class="fa fa-search"></i></span><input
+                    type="text" class="form-control" placeholder="Search" style="width: min-content;"
+                    [(ngModel)]="nameSearch">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 ">
+
+                <table class="table table-dark table-hover text-center center ml-auto">
+                    <thead class="thead-dark">
+                        <th>Sr.No</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>Pincode</th>
+                        <th>Joining Date</th>
+                        <th>Date of Birth</th>
+                        <th>Action</th>
+
+                    </thead>
+                    <tbody class="tbody-light">
+                        <tr *ngFor="let item of users |search:nameSearch; index as i">
+                            <td>{{i+1}}</td>
+                            <td>{{item.firstName}}</td>
+                            <td>{{item.surName}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.mobile}}</td>
+                            <td>{{item.gender}}</td>
+                            <td>{{item.address}}</td>
+                            <td>{{item.city}}</td>
+                            <td>{{item.pincode}}</td>
+                            <td>{{item.joiningDate}}</td>
+                            <td>{{item.dob}}</td>
+                            <td> <input type="radio" name="data" (click)="onRadioClick(item)"> </td>
+
+
+
+                            <!--sending data to update componant using routing -->
+                            <!-- <button class="btn btn-outline-success" (click)="onUpdate(item)" >update</button>
+                <button class="btn btn-outline-danger"  (click)="onDelete(item)">Delete</button> -->
+                            <!-- <td> <input type="radio" name="data" (click)="onRadioClick(item)"> </td> -->
+
+
+
+
+                        </tr>
+
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,184 @@
+<app-header></app-header>
+<div class="container">
+    <div id="login-row" class="row justify-content-center align-items-center">
+        <div class="col-md-8">
+            <div class="card mr-5 ml-5 " style="background-color: burlywood; ">
+                <div class="card-body">
+                    <h2 class="text-center">----Add User----</h2>
+
+                    <div class="col-sm-12 col-md-12">
+
+                        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                            {{f.value | json}}
+
+                            <!-- First Name -->
+
+                            <div class="form-group">
+                                <label for="firstname">First Name:</label>
+                                <input ngModel #firstname="ngModel" required id="firstname" name="firstname" type="text"
+                                    class="form-control" placeholder="Enter First Name" minlength="4">
+
+                                <div class="alert alert-danger" *ngIf="firstname.touched && !firstname.valid">
+                                    Please Enter Username
+                                </div>
+                            </div>
+
+                            <!-- Sur Name -->
+
+                            <div class="form-group">
+                                <label for="lastname">Sur Name:</label>
+                                <input ngModel #lastname="ngModel" required id="lastname" name="lastname" type="text"
+                                    class="form-control" placeholder="Enter SurName" minlength="4">
+
+                                <div class="alert alert-danger" *ngIf="lastname.touched && !lastname.valid">
+                                    Please Enter Lastname
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input ngModel #email="ngModel" required id="email" name="email" type="email"
+                                    class="form-control" placeholder="Enter your Email Id..." [pattern]="EMAIL_PATTERN">
+
+                                <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+                                    Please Enter Email Id
+
+                                    <div *ngIf="email.errors.pattern">Please Enter apropriate Email Id</div>
+                                </div>
+                            </div>
+
+                            <!-- password -->
+                            <div class="form-group">
+                                <label for="password">password:</label>
+                                <input ngModel #password="ngModel" required id="password" name="password" type="password"
+                                    class="form-control" placeholder="Enter your password" >
+
+                                <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+                                    Please Enter password
+                                </div>
+                            </div>
+
+                            <!-- Phone-->
+
+                            <div class="form-group">
+                                <label for="mobile">Mobile Number:</label>
+                                <input ngModel #mobile="ngModel" required id="mobile" name="mobile" type="number"
+                                    class="form-control" placeholder="Enter mobile Number" minlength="10">
+
+                                <div class="alert alert-danger" *ngIf="mobile.touched && !mobile.valid">
+                                    Please Enter Phone Number
+                                    <div *ngIf="mobile.errors.minlength">
+                                        Phone Number must be of {{mobile.errors.minlength.requiredLength}} digits
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- gender -->
+
+                            Gender: <br>
+
+                            <div class="radio">
+                                <label for="gender">
+                                    <input type="radio" name="gender" id="gender" ngModel #contact="ngModel"
+                                        value="MALE" required>
+                                    Male
+                                </label>
+                            </div>
+
+                            <div class="radio">
+                                <label for="gender">
+                                    <input type="radio" name="gender" id="gender" ngModel #contact="ngModel"
+                                        value="FEMALE" required>
+                                    Female
+                                </label>
+                            </div>
+
+                            <!-- Address -->
+
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input ngModel #address="ngModel" required id="address" name="address" type="text"
+                                    class="form-control" placeholder="Enter address" minlength="4">
+
+                                <div class="alert alert-danger" *ngIf="address.touched && !address.valid">
+                                    Please Enter Address
+                                </div>
+                            </div>
+
+                            <!-- City -->
+
+
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input ngModel #city="ngModel" required id="city" name="city" type="text"
+                                    class="form-control" placeholder="Enter city" minlength="4">
+
+                                <div class="alert alert-danger" *ngIf="city.touched && !city.valid">
+                                    Please Enter City
+                                </div>
+                            </div>
+
+                            <!-- Pincode -->
+                            <div class="form-group">
+                                <label for="pincode">Pincode</label>
+                                <input ngModel #pincode="ngModel" required id="pincode" name="pincode" type="text"
+                                    class="form-control" placeholder="Enter pincode" minlength="4">
+
+                                <div class="alert alert-danger" *ngIf="pincode.touched && !pincode.valid">
+                                    Please Enter Pincode
+                                </div>
+                            </div>
+
+                            <!-- Date of Birth -->
+                            <div class="form-group">
+                                <label for="dob">Date of Birth</label>
+                                <input ngModel #dob="ngModel" required id="dob" name="dob" type="date"
+                                    class="form-control">
+
+                                <div class="alert alert-danger" *ngIf="dob.touched && !dob.valid">
+                                    Please Select Date of Birth
+                                </div>
+                            </div>
+
+                            <!--  Date of Joining -->
+                            <div class="form-group">
+                                <label for="joiningDate">Joining Date</label>
+                                <input ngModel #joiningDate="ngModel" required id="joiningDate" name="joiningDate" type="date"
+                                    class="form-control">
+
+                                <div class="alert alert-danger" *ngIf="joiningDate.touched && !joiningDate.valid">
+                                    Please Select Joining Date
+                                </div>
+                            </div>
+
+
+
+                            <!-- terms and condition -->
+
+                            <div class="checkbox">
+                                <label for="">
+                                    <input type="checkbox" ngModel name="issubscribed" #mail="ngModel" required>
+                                    I Agree All the Terms and Conditions
+                                </label>
+                            </div>
+
+
+                            <div class="text-center">
+                                <button [disabled]="f.invalid" class="btn btn-success"> Submit</button>
+
+                            </div>
+                        </form>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

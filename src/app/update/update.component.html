@@ -1,0 +1,69 @@
+
+<div>
+  <app-header></app-header>
+</div>
+
+
+<div class="container">
+  <div id="login-row" class="row justify-content-center align-items-center">
+    <div class="col-md-8">
+      <div class="card mr-5 ml-5 " style="background-color:seagreen; ">
+        <div class="card-body">
+          <h2 class="text-center">----Update User----</h2>
+
+          <div class="col-sm-12 col-md-12">
+
+            <div class="container mt-4 text-center">
+              
+              <label for="">Id: &nbsp;&nbsp;</label>
+              <input type="number" readonly [(ngModel)]="id">
+              <br><br>
+              <label for="">FirstName: &nbsp;&nbsp;</label>
+              <input type="text" [(ngModel)]="firstName">
+              <br><br>
+              <label for="">surName: &nbsp;&nbsp;</label>
+              <input type="text" [(ngModel)]="surName">
+              <br><br>
+              <label for="">Email: &nbsp;&nbsp;</label>
+              <input type="email" [(ngModel)]="email">
+              <br><br>
+              <label for="">mobile Number: &nbsp;&nbsp;</label>
+              <input type="number" [(ngModel)]="mobile">
+              <br><br>
+
+              <label for="">gender: &nbsp;&nbsp;</label>
+              <input type="text" [(ngModel)]="gender">
+              <br><br>
+
+              <label for="">password: &nbsp;&nbsp;</label>
+              <input type="text" [(ngModel)]="password">
+              <br><br>
+
+              <label for="">address: &nbsp;&nbsp;</label>
+              <input type="text" [(ngModel)]="address">
+              <br><br>
+              <label for="">city: &nbsp;&nbsp;</label>
+              <input type="text" [(ngModel)]="city">
+              <br><br>
+
+              <label for="">city: &nbsp;&nbsp;</label>
+              <input type="text" [(ngModel)]="pincode">
+              <br><br>
+
+              <label for="">Date of Birth: &nbsp;&nbsp;</label>
+              <input type="date" [(ngModel)]="dob">
+              <br><br>
+
+              <label for="">joining Date: &nbsp;&nbsp;</label>
+              <input type="date" [(ngModel)]="joiningDate">
+              <br><br>
+              <div class="text-center">
+                <button class="btn btn-success" (click)="onFinalUpdateUser()"> Update </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
